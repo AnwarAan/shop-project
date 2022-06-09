@@ -13,13 +13,12 @@ app.use(bodyParser.urlencoded({
 app.use(productRouter);
 app.use(customerRouter);
 
-mongoose.connect('mongodb://localhost:27017/shoppingDB', {
+mongoose.connect('mongodb://127.0.0.1:27017/shoppingDB', {
     useNewUrlParser: true
 });
 
 app.get('/', (req, res) => {
-    // res.send("HOME");
-    res.sendStatus(200)
+    res.send("HOME");
 })
 
 app.listen(port, () => {
